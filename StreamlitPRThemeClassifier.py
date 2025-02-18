@@ -9,7 +9,7 @@ from transformers import pipeline
 # ==============================
 model_name = st.selectbox(
     "Select Zero-Shot Classification Model:",
-    ["facebook/bart-large-mnli", "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli"],
+    ["facebook/bart-large-mnli", "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli", "cross-encoder/nli-distilroberta-base", "facebook/bart-large-mnli-yahoo-answers"],
     index=0  # Default to BART
 )
 
@@ -122,4 +122,4 @@ if uploaded_file is not None:
                 st.download_button("Download Results", f, file_name="classified_urls.xlsx",
                                    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
 
-st.info("Switch between BART and DeBERTa models using the dropdown for comparison.")
+st.info("Switch between models using the dropdown for comparison.")
